@@ -1,0 +1,21 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fortran Plot</title>
+</head>
+<body>
+    <h1>Plot from Fortran Data</h1>
+    <form action="/calculate" method="post">
+        <label for="frequency">Frequency:</label>
+        <input type="text" id="frequency" name="frequency"><br><br>
+        <label for="amplitude">Amplitude:</label>
+        <input type="text" id="amplitude" name="amplitude"><br><br>
+        <input type="submit" value="Generate Plot">
+    </form>
+    {% if plot_path %}
+    <img src="{{ url_for('plot_image') }}" alt="Plot">
+    {% endif %}
+</body>
+</html>
